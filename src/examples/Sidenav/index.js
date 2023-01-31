@@ -97,6 +97,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           sx={{ textDecoration: "none" }}
         >
           <SidenavCollapse
+            style={{ color: "white" }}
             name={name}
             icon={icon}
             active={key === collapseName}
@@ -105,7 +106,12 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         </Link>
       ) : (
         <NavLink key={key} to={route}>
-          <SidenavCollapse name={name} icon={icon} active={key === collapseName} />
+          <SidenavCollapse
+            style={{ color: "white" }}
+            name={name}
+            icon={icon}
+            active={key === collapseName}
+          />
         </NavLink>
       );
     } else if (type === "title") {
@@ -166,7 +172,12 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
-            <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
+            <MDTypography
+              component="h6"
+              variant="button"
+              fontWeight="medium"
+              sx={{ color: "white" }}
+            >
               {brandName}
             </MDTypography>
           </MDBox>
@@ -179,7 +190,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
-      <MDBox p={2} mt="auto">
+      <MDBox p={2} mt="auto" sx={{ color: "white" }}>
         <MDButton
           component="a"
           href="https://www.creative-tim.com/product/material-dashboard-pro-react"

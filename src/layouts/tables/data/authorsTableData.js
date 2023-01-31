@@ -27,14 +27,18 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
 export default function data() {
-  const Author = ({ image, name, email }) => (
+  const ChartValues= ({ years, age, yearlyExp, yearlyPassive, netIncome, retirementCorpus }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" />
+     
       <MDBox ml={2} lineHeight={1}>
         <MDTypography display="block" variant="button" fontWeight="medium">
-          {name}
+          {years}
         </MDTypography>
-        <MDTypography variant="caption">{email}</MDTypography>
+        <MDTypography variant="caption">{age}</MDTypography>
+        <MDTypography variant="caption">{yearlyExp}</MDTypography>
+        <MDTypography variant="caption">{yearlyPassive}</MDTypography>
+        <MDTypography variant="caption">{netIncome}</MDTypography>
+        <MDTypography variant="caption">{ageretirementCorpus}</MDTypography>
       </MDBox>
     </MDBox>
   );
@@ -59,7 +63,7 @@ export default function data() {
 
     rows: [
       {
-        author: <Author image={team2} name="John Michael" email="john@creative-tim.com" />,
+        author: <ChartValues year="2083" age="60"  />,
         function: <Job title="Manager" description="Organization" />,
         status: (
           <MDBox ml={-1}>
@@ -73,7 +77,7 @@ export default function data() {
         ),
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
+            E
           </MDTypography>
         ),
       },

@@ -1,0 +1,6 @@
+export const GET_ACCOUNT = "GET_ACCOUNT";
+export const GET_RETIREMENT_PLANS = "GET_RETIREMENT_PLANS";
+
+export const GET_DREAM_HOMES = "GET_DREAM_HOMES";
+
+export const GET_DREAM_CARS = "GET_DREAM_CARS";
