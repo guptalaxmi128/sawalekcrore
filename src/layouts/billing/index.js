@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -42,57 +42,57 @@ function DreamHomes() {
     dispatch(getDreamHomes());
   }, [dispatch]);
 
-  const {
-    presentCostDH,
-    yearToBuy,
-    estimatedInflationRate,
-    existingFund,
-    extimatedInvestmentReturn,
-    CurrentYearlyInvestmentDH,
-  } = responseData[0];
+  // const {
+  //   presentCostDH,
+  //   yearToBuy,
+  //   estimatedInflationRate,
+  //   existingFund,
+  //   extimatedInvestmentReturn,
+  //   CurrentYearlyInvestmentDH,
+  // } = responseData[0];
 
-  const [presentCost, setPresentCost] = useState(presentCostDH);
-  const presentCostHandler = (value) => {
-    setPresentCost(value);
-  };
+  // const [presentCost, setPresentCost] = useState(presentCostDH);
+  // const presentCostHandler = (value) => {
+  //   setPresentCost(value);
+  // };
 
-  const [year, setYear] = useState(yearToBuy);
-  const yearToBuyHandler = (value) => {
-    setYear(value);
-  };
+  // const [year, setYear] = useState(yearToBuy);
+  // const yearToBuyHandler = (value) => {
+  //   setYear(value);
+  // };
 
-  const [inflationRate, setInflationRate] = useState(estimatedInflationRate);
-  const inflationRateHandler = (value) => {
-    setInflationRate(value);
-  };
+  // const [inflationRate, setInflationRate] = useState(estimatedInflationRate);
+  // const inflationRateHandler = (value) => {
+  //   setInflationRate(value);
+  // };
   // console.log(inflationRate);
   // console.log(presentCost);
 
-  const [existFund, setExistFund] = useState(existingFund);
-  const existFundHandler = (value) => {
-    setExistFund(value);
-  };
+  // const [existFund, setExistFund] = useState(existingFund);
+  // const existFundHandler = (value) => {
+  //   setExistFund(value);
+  // };
 
-  const [investmentReturn, setInvestmentRetuen] = useState(extimatedInvestmentReturn);
-  const investmentReturnHandler = (value) => {
-    setInvestmentRetuen(value);
-  };
+  // const [investmentReturn, setInvestmentRetuen] = useState(extimatedInvestmentReturn);
+  // const investmentReturnHandler = (value) => {
+  //   setInvestmentRetuen(value);
+  // };
 
-  const [yearlyInvestment, setYearlyInvestment] = useState(CurrentYearlyInvestmentDH);
-  const yearlyInvestmentHandler = (value) => {
-    setYearlyInvestment(value);
-  };
+  // const [yearlyInvestment, setYearlyInvestment] = useState(CurrentYearlyInvestmentDH);
+  // const yearlyInvestmentHandler = (value) => {
+  //   setYearlyInvestment(value);
+  // };
 
-  const futureVODH = presentCost * (1 + inflationRate / 100) ** year;
+  // const futureVODH = presentCost * (1 + inflationRate / 100) ** year;
 
-  const futureVOExistingFundInvestment = [];
-  futureVOExistingFundInvestment.push(existFund * (1 + investmentReturn / 100) ** year);
-  futureVOExistingFundInvestment.push(
-    (yearlyInvestment * ((1 + investmentReturn / 100) ** year - 1) * 100) / investmentReturn
-  );
-  futureVOExistingFundInvestment.push(
-    futureVOExistingFundInvestment[0] + futureVOExistingFundInvestment[1]
-  );
+  // const futureVOExistingFundInvestment = [];
+  // futureVOExistingFundInvestment.push(existFund * (1 + investmentReturn / 100) ** year);
+  // futureVOExistingFundInvestment.push(
+  //   (yearlyInvestment * ((1 + investmentReturn / 100) ** year - 1) * 100) / investmentReturn
+  // );
+  // futureVOExistingFundInvestment.push(
+  //   futureVOExistingFundInvestment[0] + futureVOExistingFundInvestment[1]
+  // );
   // console.log(futureVOExistingFundInvestment);
   return (
     <DashboardLayout>
@@ -116,8 +116,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={1000000}
                   max={10000000}
-                  value={presentCost}
-                  onChange={presentCostHandler}
+                  // value={presentCost}
+                  // onChange={presentCostHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -148,7 +148,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* 350000 */}₹ {presentCost}
+                  350000
+                  {/* ₹ {presentCost} */}
                 </Typography>
               </Box>
             </Box>
@@ -170,8 +171,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={0}
                   max={100}
-                  value={year}
-                  onChange={yearToBuyHandler}
+                  // value={year}
+                  // onChange={yearToBuyHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -199,8 +200,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* 10 */}
-                  &nbsp; &nbsp; {year}
+                  10
+                  {/* &nbsp; &nbsp; {year} */}
                 </Typography>
               </Box>
             </Box>
@@ -222,8 +223,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={1000000}
                   max={10000000}
-                  value={existFund}
-                  onChange={existFundHandler}
+                  // value={existFund}
+                  // onChange={existFundHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -251,7 +252,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* 100000 */}₹ {existFund}
+                  100000
+                  {/* ₹ {existFund} */}
                 </Typography>
               </Box>
             </Box>
@@ -275,8 +277,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={0}
                   max={100}
-                  value={inflationRate}
-                  onChange={inflationRateHandler}
+                  // value={inflationRate}
+                  // onChange={inflationRateHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -303,8 +305,9 @@ function DreamHomes() {
                     fontSize: "16px",
                   }}
                   variant="h6"
-                >
-                  &nbsp; &nbsp; {inflationRate}
+                >      
+                1000
+                  {/* &nbsp; &nbsp; {inflationRate} */}
                 </Typography>
               </Box>
             </Box>
@@ -326,8 +329,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={0}
                   max={100}
-                  value={investmentReturn}
-                  onChange={investmentReturnHandler}
+                  // value={investmentReturn}
+                  // onChange={investmentReturnHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -350,13 +353,13 @@ function DreamHomes() {
                     color: "yellow",
                     textAlign: "left",
                     backgroundColor: "rgba(255, 214, 1, 0.2)",
-
                     borderRadius: 3,
                     fontSize: "16px",
                   }}
                   variant="h6"
                 >
-                  &nbsp; &nbsp; {investmentReturn}
+                10
+                  {/* {investmentReturn} */}
                 </Typography>
               </Box>
             </Box>
@@ -379,8 +382,8 @@ function DreamHomes() {
                   circleColor="#ffd601"
                   min={1000000}
                   max={10000000}
-                  value={yearlyInvestment}
-                  onChange={yearlyInvestmentHandler}
+                  // value={yearlyInvestment}
+                  // onChange={yearlyInvestmentHandler}
                 />
               </Box>
               <Box sx={{ width: "201px", height: "38px" }} ml={11}>
@@ -411,7 +414,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* &nbsp; ₹ 100000 */}₹ {yearlyInvestment}
+                  &nbsp; ₹ 100000
+                  {/* ₹ {yearlyInvestment} */}
                 </Typography>
               </Box>
             </Box>
@@ -449,8 +453,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* 774848948984 */}
-                  {futureVODH}
+                  774848948984
+                  {/* {futureVODH} */}
                 </Typography>
               </Box>
             </Grid>
@@ -482,8 +486,8 @@ function DreamHomes() {
                   }}
                   variant="h6"
                 >
-                  {/* 23855955.5885 */}
-                  {futureVOExistingFundInvestment[2]}
+                  23855955.5885
+                  {/* {futureVOExistingFundInvestment[2]} */}
                 </Typography>
               </Box>
             </Grid>
